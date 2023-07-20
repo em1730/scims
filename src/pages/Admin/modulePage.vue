@@ -9,7 +9,7 @@
       <div class="q-pa-none row items-start">
         <!-- modules left card -->
         <q-card-section>
-          <q-card class="my-card bg-blue-grey-10 text-white" style="width: min-content;">
+          <q-card class="my-card bg-blue-grey-10 text-white text-caption" style="width: min-content;">
             <q-card-actions vertical>
               <q-btn flat>Administration</q-btn>
               <q-btn flat>barangay</q-btn>
@@ -24,16 +24,26 @@
         </q-card-section>
 
         <!-- add modules right card -->
-        <q-card-section>
-          <q-card class="my-card" style="width: max-content;">
+        <q-card-section class="my-card" style="width: max-content;">
+          <div class="row no-wrap items-center q-pa-none text-white rounded-borders">
+            <q-btn icon="undo" label="back" color="blue-grey-10" to="/" />
+
+            <q-space />
+
+            <div>
+              <q-btn icon="add" label="New Module" color="blue-grey-10" @click="handleDialogNew" />
+            </div>
+          </div>
+
+          <!-- <q-card class="my-card" style="width: max-content;">
             <q-card-actions horizontal>
               <q-btn icon="undo" label="back" color="blue-grey-10" to="/" />
               <q-btn icon="add" label="New Module" color="blue-grey-10" @click="handleDialogNew" />
             </q-card-actions>
-          </q-card>
+          </q-card> -->
         </q-card-section>
 
-        <q-dialog v-model="newDialog" class="q-pa-md" full-width>
+        <q-dialog v-model="newDialog" full-width>
           <q-card>
             <q-bar class="bg-blue-grey-10 text-white text-center">
               <div class="col text-left text-weight-bold">
@@ -44,16 +54,23 @@
 
               <q-btn dense flat icon="close" v-close-popup />
             </q-bar>
+
+            <!-- Input -->
             <q-card-section>
-              <q-input v-model="text" label="Module" hint="Note: Existing module won't be added."/>
+              <q-input v-model="text" label="Module" hint="Note: Existing module won't be added." />
             </q-card-section>
 
-            <div class="row no-wrap items-center">
-              <q-card-section>
-              <q-btn dense icon="do_not_disturb_on" class="text-caption" label="Delete Row" color="blue-grey-10"/>
-             
-              <q-btn dense icon="add_circle" class="text-caption" label="Add Row" color="blue-grey-10"/>
-            </q-card-section>
+            <div class="q-pa-md">
+
+              <div class="row no-wrap items-center q-mt-md q-pa-sm text-white rounded-borders">
+                <q-btn dense icon="do_not_disturb_on" class="text-caption" label="Delete Row" color="blue-grey-10" />
+
+                <q-space />
+
+                <div>
+                  <q-btn dense icon="add_circle" class="text-caption" label="Add Row" color="blue-grey-10" />
+                </div>
+              </div>
             </div>
 
             <q-card-section class="q-pt-none">
@@ -62,8 +79,10 @@
               </q-table>
             </q-card-section>
 
+
             <q-card-actions align="right">
-              <q-btn flat label="OK" color="primary" v-close-popup />
+              <q-btn label="Close" color="blue-grey-10" v-close-popup />
+              <q-btn label="Submit" color="blue-grey-10" v-close-popup />
             </q-card-actions>
           </q-card>
         </q-dialog>
