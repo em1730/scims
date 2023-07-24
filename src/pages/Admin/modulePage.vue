@@ -34,13 +34,6 @@
               <q-btn icon="add" label="New Module" color="blue-grey-10" @click="handleDialogNew" />
             </div>
           </div>
-
-          <!-- <q-card class="my-card" style="width: max-content;">
-            <q-card-actions horizontal>
-              <q-btn icon="undo" label="back" color="blue-grey-10" to="/" />
-              <q-btn icon="add" label="New Module" color="blue-grey-10" @click="handleDialogNew" />
-            </q-card-actions>
-          </q-card> -->
         </q-card-section>
 
         <q-dialog v-model="newDialog" full-width>
@@ -74,8 +67,26 @@
             </div>
 
             <q-card-section class="q-pt-none">
-              <q-table>
+              <q-table flat :rows="users" :columns="cols">
+                <template v-slot:body-cell-username="props">
+                  <q-td class="text-red">
+                    <q-icon color="indigo" name="person" size="16px" /> {{ props.row.username }}
+                  </q-td>
+                </template>
 
+                <template v-slot:body-cell-status="props">
+                  <q-td :props="props" class="text-red">
+                    <q-select v-model="status" :options="['Verified', 'Not Verified']" />
+                  </q-td>
+                </template>
+
+                <template v-slot:body-cell-actions="props">
+                  <q-td :props="props">
+                    <q-btn @click="handleDialogUpdating(props.row)" flat round icon="edit" size="sm" color="positive" />
+                    <q-btn @click="handleDelete(props.row)" flat round icon="delete" size="sm" color="negative" />
+                    <q-btn flat round icon="description" size="sm" color="blue" />
+                  </q-td>
+                </template>
               </q-table>
             </q-card-section>
 
@@ -100,6 +111,12 @@ function handleDialogNew() {
 
   newDialog.value = true
 }
+
+const cols = [
+  { name: 'userRole', field: 'userRole', label: 'User Role', align: 'center', sortable: true, headerClasses: 'bg-blue-grey-10 text-white'},
+  { name: 'title', field: 'title', label: 'Title', align: 'center', sortable: true, headerClasses: 'bg-blue-grey-10 text-white' }
+
+]
 
 
 </script>

@@ -9,6 +9,20 @@
           </q-avatar>
           San Carlos City Integrated Management System
         </q-toolbar-title>
+
+        <q-btn flat label="Button">
+          <q-menu anchor="bottom middle" self="top left">
+            <q-item clickable>
+              <q-item-section>New tab</q-item-section>
+            </q-item>
+            <q-item clickable>
+              <q-item-section>New incognito tab</q-item-section>
+            </q-item>
+          </q-menu>
+        </q-btn>
+
+
+
       </q-toolbar>
     </q-header>
 
