@@ -1,9 +1,11 @@
-<template >
+<template>
   <q-layout view="hHh lpR fFf" class="select-none">
-    <q-header class="bg-gradient-to-tl from-gray-900 to-slate-600 text-white">
+    <q-header
+      class="bg-gradient-to-tl from-gray-950 to-slate-700 text-white drop-shadow-2xl"
+    >
       <q-toolbar>
         <q-toolbar-title class="text-subtitle2">
-          <q-avatar size="40px">
+          <q-avatar size="w-6 h-auto">
             <img
               src="https://vamosmobile.app/scims-v2/dashboard/images/scc-logo.ico"
             />
