@@ -19,7 +19,7 @@
             dense
             style="color: white"
             unelevated
-            class="hover:scale-110 duration-300 hover:"
+            class="hover:scale-110 duration-300"
             to="/administration"
           >
             <img
@@ -33,7 +33,7 @@
             dense
             style="color: white"
             unelevated
-            class="hover:scale-110 duration-300 hover:"
+            class="hover:scale-110 duration-300"
             type="submit"
           >
             <img
@@ -47,7 +47,7 @@
             dense
             style="color: white"
             unelevated
-            class="hover:scale-110 duration-300 hover:"
+            class="hover:scale-110 duration-300"
             type="submit"
           >
             <img
@@ -61,7 +61,7 @@
             dense
             style="color: white"
             unelevated
-            class="hover:scale-110 duration-300 hover:"
+            class="hover:scale-110 duration-300"
             type="submit"
           >
             <img
@@ -75,7 +75,7 @@
             dense
             style="color: white"
             unelevated
-            class="hover:scale-110 duration-300 hover:"
+            class="hover:scale-110 duration-300"
             type="submit"
           >
             <img

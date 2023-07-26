@@ -21,7 +21,7 @@
             <div class="sm:hidden md:block portrait:hidden">
               <div class="flex space-x-4">
                 <p class="text-white px-1 py-2 rounded-md text-xl font-medium">
-                  San Carlos City Integrated Management System
+                  San Carlos Integrated Management System
                 </p>
               </div>
             </div>
@@ -70,7 +70,7 @@
               >
                 <svg
                   aria-hidden="true"
-                  class="w-5 h-5 mr-2 fill-current"
+                  class="w-5 h-5 ml-2 fill-current"
                   fill="none"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@
               >
                 <svg
                   aria-hidden="true"
-                  class="w-5 h-5 mr-2 fill-current"
+                  class="w-5 h-5 ml-2 fill-current"
                   fill="none"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@
               >
                 <svg
                   aria-hidden="true"
-                  class="w-5 h-5 mr-2 fill-current"
+                  class="w-5 h-5 ml-2 fill-current"
                   fill="none"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@
                 >
                   <svg
                     aria-hidden="true"
-                    class="w-5 h-5 mr-2 fill-current"
+                    class="w-5 h-5 ml-2 fill-current"
                     fill="none"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +200,7 @@
                   <q-item-section avatar>
                     <svg
                       aria-hidden="true"
-                      class="w-5 h-5 mr-2 fill-current"
+                      class="w-5 h-5 ml-2 fill-current"
                       fill="none"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -219,7 +219,7 @@
                   <q-item-section avatar>
                     <svg
                       aria-hidden="true"
-                      class="w-5 h-5 mr-2 fill-current"
+                      class="w-5 h-5 ml-2 fill-current"
                       fill="none"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -243,7 +243,7 @@
                   <q-item-section avatar>
                     <svg
                       aria-hidden="true"
-                      class="w-5 h-5 mr-2 fill-current"
+                      class="w-5 h-5 ml-2 fill-current"
                       fill="none"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -271,13 +271,14 @@
       </div>
     </nav>
 
-    <div
-      style="background-image: url(src/assets/bg.png); background-size: cover"
-    >
-      <q-page-container>
-        <router-view />
-      </q-page-container>
-    </div>
+    <q-page-container>
+      <div
+        class="overflow-y-auto transition-all duration-300 bg-cover bg-center"
+        style="background-image: url(src/assets/bg.png)"
+      >
+        <router-view/>
+      </div>
+    </q-page-container>
   </q-layout>
 </template>
 

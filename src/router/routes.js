@@ -38,9 +38,9 @@ const routes = [{
                     import ('pages/Admin/masterListPage.vue')
             },
             {
-                path: '/masterList',
+                path: '/samples',
                 component: () =>
-                    import ('pages/Admin/masterListPage.vue')
+                    import ('pages/Admin/samplesPage.vue')
             }
 
 

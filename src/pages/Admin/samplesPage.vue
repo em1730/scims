@@ -85,3 +85,9 @@
 </template>
 
 <script setup></script>
+
+<!-- <style scoped>
+body {
+  overflow-y: hidden; /* Hide vertical scrollbar */
+}
+</style> -->
