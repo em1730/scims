@@ -4,8 +4,8 @@
       <div class="pb-5">
         <transition
           appear
-          enter-active-class="animated fadeIn"
-          leave-active-class="animated fadeOut"
+          enter-active-class="animated animate__fadeIn"
+          leave-active-class="animated animate__fadeOut"
         >
           <img
             class="h-48 w-48 rounded-full border drop-shadow-2xl"
