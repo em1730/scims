@@ -2,7 +2,7 @@
   "name": "scims",
   "version": "0.0.1",
   "description": "Integration",
-  "productName": "San Carlos City Integrated Management System",
+  "productName": "San Carlos Integrated Management System (SCIMS)",
   "author": "ITCSO",
   "private": true,
   "scripts": {

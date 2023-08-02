@@ -12,9 +12,9 @@
           </div>
 
           <div
-            class="flex flex-wrap vertical:flex-col justify-center items-center transition-all"
+            class="flex flex-wrap vertical:flex-col justify-center items-center transition-all text-center"
           >
-            <a href="/scims_final/system">
+            <!-- <a href="/scims_final/system">
               <button
                 class="group hover:scale-110 duration-300"
                 data-te-ripple-init
@@ -76,7 +76,25 @@
                 />
                 <p class="text-xs group-hover:text-blue-800">Master List</p>
               </button>
-            </a>
+            </a> -->
+
+            <!-- System Buttons  -->
+            <transition-group
+              appear
+              enter-active-class="animated animate__zoomIn"
+              leave-active-class="animated animate__zoomOut"
+            >
+              <DoctrackBtn key="doctrack-button" />
+              <JomisBtn key="jomis-button" />
+              <SPBtn key="sp-button" />
+              <AdminBtn key="admin-button" />
+
+              <ModuleBtn key="Module-button" />
+              <EndUserBtn key="EndUser-button" />
+              <UserLogsBtn key="UserLogs-button" />
+              <MasterListBtn key="MasterList-button" />
+            </transition-group>
+            <!-- End of System Buttons  -->
           </div>
         </div>
       </div>
@@ -84,4 +102,9 @@
   </body>
 </template>
 
-<script setup></script>
+<script setup>
+import EndUserBtn from "components/button/EndUserBtn.vue";
+import MasterListBtn from "components/button/MasterListBtn.vue";
+import UserLogsBtn from "components/button/UserLogsBtn.vue";
+import ModuleBtn from "components/button/ModuleBtn.vue";
+</script>
