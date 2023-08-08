@@ -17,7 +17,12 @@
     <p
       class="text-xs group-hover:text-blue-800 lg:block sm:hidden portrait:hidden"
     >
-      SP IMS
+      Legislative Tracking
+    </p>
+    <p
+      class="text-xs group-hover:text-blue-800 lg:block sm:hidden portrait:hidden"
+    >
+      & Archiving
     </p>
   </div>
 </template>

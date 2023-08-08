@@ -14,81 +14,12 @@
           <div
             class="flex flex-wrap vertical:flex-col justify-center items-center transition-all text-center"
           >
-            <!-- <a href="/scims_final/system">
-              <button
-                class="group hover:scale-110 duration-300"
-                data-te-ripple-init
-                data-te-ripple-color="light"
-                type="submit"
-              >
-                <img
-                  class="w-36 md:w-32 lg:w-32 sm:w-16"
-                  src="https://vamosmobile.app/scims_final/resources/images/module.webp"
-                />
-                <p class="text-xs group-hover:text-blue-800 lg:hidden">
-                  Module
-                </p>
-                <p
-                  class="text-xs group-hover:text-blue-800 lg:block sm:hidden portrait:hidden"
-                >
-                  Module Management
-                </p>
-              </button>
-            </a>
-            <a href="#">
-              <button
-                class="group hover:scale-110 duration-300"
-                data-te-ripple-init
-                data-te-ripple-color="light"
-                type="submit"
-              >
-                <img
-                  class="w-36 md:w-32 lg:w-32 sm:w-16"
-                  src="https://vamosmobile.app/scims_final/resources/images/end_user.webp"
-                />
-                <p class="text-xs group-hover:text-blue-800">End User</p>
-              </button>
-            </a>
-            <a href="#">
-              <button
-                class="group hover:scale-110 duration-300"
-                data-te-ripple-init
-                data-te-ripple-color="light"
-                type="submit"
-              >
-                <img
-                  class="w-36 md:w-32 lg:w-32 sm:w-16"
-                  src="https://vamosmobile.app/scims_final/resources/images/user_logs.webp"
-                />
-                <p class="text-xs group-hover:text-blue-800">User Logs</p>
-              </button>
-            </a>
-            <a href="#">
-              <button
-                class="group hover:scale-110 duration-300"
-                data-te-ripple-init
-                data-te-ripple-color="light"
-                type="submit"
-              >
-                <img
-                  class="w-36 md:w-32 lg:w-32 sm:w-16"
-                  src="https://vamosmobile.app/scims_final/resources/images/masterlisting.webp"
-                />
-                <p class="text-xs group-hover:text-blue-800">Master List</p>
-              </button>
-            </a> -->
-
             <!-- System Buttons  -->
             <transition-group
               appear
               enter-active-class="animated animate__zoomIn"
               leave-active-class="animated animate__zoomOut"
             >
-              <DoctrackBtn key="doctrack-button" />
-              <JomisBtn key="jomis-button" />
-              <SPBtn key="sp-button" />
-              <AdminBtn key="admin-button" />
-
               <ModuleBtn key="Module-button" />
               <EndUserBtn key="EndUser-button" />
               <UserLogsBtn key="UserLogs-button" />

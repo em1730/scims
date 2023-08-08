@@ -9,13 +9,21 @@
         >
           <img
             class="h-48 w-48 rounded-full border drop-shadow-2xl"
-            src="https://vamosmobile.app/sccdrrmo/flutter/images/647acfbcc8828.jpg"
+            v-bind:src="UserData.image"
             alt="Profile Picture"
           />
         </transition>
       </div>
       <div class="pb-10">
-        <p class="text-center text-3xl">Jerhod Kyan A. Ricabo</p>
+        <p class="text-center text-3xl">
+          {{
+            UserData.first_name +
+            " " +
+            UserData.middle_name +
+            " " +
+            UserData.last_name
+          }}
+        </p>
       </div>
 
       <div
@@ -28,8 +36,14 @@
           leave-active-class="animated animate__zoomOut"
         >
           <DoctrackBtn key="doctrack-button" />
-          <JomisBtn key="jomis-button" />
+          <CertClearanceBtn key="CertClearance-button" />
           <SPBtn key="sp-button" />
+          <JomisBtn key="jomis-button" />
+          <SeniorBtn key="senior-button" />
+          <GsdBtn key="gsd-button" />
+          <LetBtn key="let-button" />
+          <ETurismoBtn key="eTurismo-button" />
+          <HrisBtn key="hris-button" />
           <AdminBtn key="admin-button" />
         </transition-group>
         <!-- End of System Buttons  -->
@@ -39,8 +53,17 @@
 </template>
 
 <script setup>
+import { reactive } from "vue";
+import { UserData } from "../../constants/global_constants";
+
 import JomisBtn from "components/button/JomisBtn.vue";
 import DoctrackBtn from "components/button/DoctrackBtn.vue";
 import SPBtn from "components/button/SPBtn.vue";
 import AdminBtn from "components/button/AdminBtn.vue";
+import CertClearanceBtn from "components/button/CertClearanceBtn.vue";
+import SeniorBtn from "components/button/SeniorBtn.vue";
+import GsdBtn from "components/button/GsdBtn.vue";
+import LetBtn from "components/button/LetBtn.vue";
+import ETurismoBtn from "components/button/ETurismoBtn.vue";
+import HrisBtn from "components/button/HrisBtn.vue";
 </script>

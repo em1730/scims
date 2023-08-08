@@ -6,19 +6,23 @@
       dense
       color="white"
       :ripple="{ color: 'white' }"
-      to="/jomis"
+      to="/administration"
     >
       <img
         class="w-36 md:w-32 lg:w-32 sm:w-16"
-        src="../../assets/icons/dashboard/job-order-managerment-information-system-jomis.webp"
+        src="../../assets/icons/dashboard/certificate-and-clearance-issuance.webp"
       />
     </q-btn>
-    <p class="text-xs group-hover:text-blue-800 lg:hidden">Jomis</p>
+    <p class="text-xs group-hover:text-blue-800 lg:hidden">Certificate</p>
     <p
       class="text-xs group-hover:text-blue-800 lg:block sm:hidden portrait:hidden"
-      style="line-height: 2.6"
     >
-      Job Order System
+      Certification &
+    </p>
+    <p
+      class="text-xs group-hover:text-blue-800 lg:block sm:hidden portrait:hidden"
+    >
+      Clearances
     </p>
   </div>
 </template>

@@ -16,6 +16,7 @@
     <p class="text-xs group-hover:text-blue-800 lg:hidden">Doctrack</p>
     <p
       class="text-xs group-hover:text-blue-800 lg:block sm:hidden portrait:hidden"
+      style="line-height: 2.6"
     >
       Document Tracking
     </p>
