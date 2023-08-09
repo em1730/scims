@@ -40,6 +40,17 @@ const routes = [
 
   {
     path: "/",
+    component: () => import("layouts/LoginLayout.vue"),
+    children: [
+      {
+        path: "/login",
+        component: () => import("pages/LoginPage.vue"),
+      },
+    ],
+  },
+
+  {
+    path: "/",
     component: () => import("layouts/ChangePwdLayout.vue"),
     children: [
       {
@@ -58,4 +69,3 @@ const routes = [
 ];
 
 export default routes;
-
