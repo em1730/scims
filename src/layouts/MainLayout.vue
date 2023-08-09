@@ -39,7 +39,11 @@
             <q-btn-dropdown
               :ripple="false"
               class="duration-300 border flex items-center text-sm font-medium text-white rounded-full md:mr-0 focus:ring-4 focus:ring-gray-100 bg-gray-600"
-              label="Jerhod Kyan A. Ricabo"
+              v-bind:label="
+                UserData.first_name +
+                ' ' +
+                UserData.last_name
+              "
             >
               <q-list class="bg-gray-200">
                 <router-link to="/">
@@ -163,4 +167,7 @@
   </q-layout>
 </template>
 
-<script setup></script>
+<script setup>
+import { reactive } from "vue";
+import { UserData } from "../constants/global_constants";
+</script>
