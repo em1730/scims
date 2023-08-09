@@ -49,29 +49,6 @@ const routes = [
     ],
   },
 
-  //sample push
-  {
-    path: "/",
-    component: () => import("layouts/ChangePwdLayout.vue"),
-    children: [
-      {
-        path: "/changePwd",
-        component: () => import("pages/Admin/changepwdPage.vue"),
-      },
-    ],
-  },
-
-  {
-    path: "/",
-    component: () => import("layouts/LoginLayout.vue"),
-    children: [
-      {
-        path: "/login",
-        component: () => import("pages/LoginPage.vue"),
-      },
-    ],
-  },
-
   // Always leave this as last one,
   // but you can also remove it
   {
@@ -81,3 +58,4 @@ const routes = [
 ];
 
 export default routes;
+
