@@ -49,6 +49,17 @@ const routes = [
     ],
   },
 
+  {
+    path: "/",
+    component: () => import("layouts/LoginLayout.vue"),
+    children: [
+      {
+        path: "/login",
+        component: () => import("pages/LoginPage.vue"),
+      },
+    ],
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {
