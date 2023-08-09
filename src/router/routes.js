@@ -49,6 +49,18 @@ const routes = [
     ],
   },
 
+  //sample push
+  {
+    path: "/",
+    component: () => import("layouts/ChangePwdLayout.vue"),
+    children: [
+      {
+        path: "/changePwd",
+        component: () => import("pages/Admin/changepwdPage.vue"),
+      },
+    ],
+  },
+
   {
     path: "/",
     component: () => import("layouts/LoginLayout.vue"),
