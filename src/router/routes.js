@@ -12,6 +12,10 @@ const routes = [
         component: () => import("pages/Admin/administrationPage.vue"),
       },
       {
+        path: "/manageAcct",
+        component: () => import("pages/Admin/manageAcctPage.vue"),
+      },
+      {
         path: "/module",
         component: () => import("pages/Admin/modulePage.vue"),
       },
