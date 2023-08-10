@@ -6,7 +6,7 @@
       dense
       color="white"
       :ripple="{ color: 'white' }"
-      to="/userLogs"
+      to="/endUser"
     >
       <img
         class="w-36 md:w-32 lg:w-32 sm:w-16"
