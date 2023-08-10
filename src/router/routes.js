@@ -28,12 +28,40 @@ const routes = [
         component: () => import("pages/Admin/masterListPage.vue"),
       },
       {
-        path: "/masterList",
-        component: () => import("pages/Admin/masterListPage.vue"),
+        path: "/brgyMasterlist",
+        component: () => import("pages/Admin/brgyMasterlistPage.vue"),
       },
       {
-        path: "/manageAcct",
-        component: () => import("pages/Admin/ManageAcctPage.vue"),
+        path: "/deptMasterlist",
+        component: () => import("pages/Admin/deptMasterlistPage.vue"),
+      },
+      {
+        path: "/docMasterlist",
+        component: () => import("pages/Admin/docMasterlistPage.vue"),
+      },
+      {
+        path: "/doctrack",
+        component: () => import("pages/Admin/doctrackPage.vue"),
+      },
+      {
+        path: "/eTurismo",
+        component: () => import("pages/Admin/eTurismoPage.vue"),
+      },
+      {
+        path: "/gsd",
+        component: () => import("pages/Admin/gsdPage.vue"),
+      },
+      {
+        path: "/hris",
+        component: () => import("pages/Admin/hrisPage.vue"),
+      },
+      {
+        path: "/let",
+        component: () => import("pages/Admin/letPage.vue"),
+      },
+      {
+        path: "/seniorcitizen",
+        component: () => import("pages/Admin/seniorCitizenPage.vue"),
       },
     ],
   },

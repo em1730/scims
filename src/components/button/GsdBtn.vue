@@ -6,7 +6,7 @@
       dense
       color="white"
       :ripple="{ color: 'white' }"
-      to="/administration"
+      to="/gsd"
     >
       <img
         class="w-36 md:w-32 lg:w-32 sm:w-16"
