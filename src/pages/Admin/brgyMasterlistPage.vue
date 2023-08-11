@@ -2,7 +2,7 @@
   <q-page padding>
     <div class="q-pa-l">
       <div class="row justify-center">
-        <div class="col-12 col-md-9">
+        <div class="col-12 col-md-10">
           <q-btn
             class="glossy q-mt-md"
             href="masterList"
@@ -15,9 +15,8 @@
             "
             align="center"
           />
-        </div>
 
-        <div class="q-pa-md">
+          <div class="q-mt-md">
           <q-table
             flat
             bordered
@@ -59,6 +58,7 @@
                 <q-btn
                   class="glossy q-mt-l"
                   rounded
+                  dense
                   label="OPEN"
                   @click="handleDialog()"
                   style="
@@ -273,6 +273,7 @@
               </q-card-section>
             </q-card>
           </q-dialog>
+        </div>
         </div>
       </div>
     </div>
