@@ -244,7 +244,7 @@
                     <q-card style="width: 300px; height: 290px">
                       <q-uploader
                         url="http://localhost:4444/upload"
-                        label="Upload Logo"
+                        label="Upload Logos"
                         color="black glossy"
                         square
                         flat
