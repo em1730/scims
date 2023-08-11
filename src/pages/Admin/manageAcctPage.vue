@@ -130,98 +130,76 @@
                     <q-tab-panel name="edit_profile">
                       <div class="text-h4 q-mb-md">Profile Details</div>
                       <div class="grid grid-cols-3 gap-4">
-                        <q-input
+                        <InputSquare
                           readonly
-                          square
-                          filled
                           v-model="UserData.first_name"
                           label="First Name"
                         />
-                        <q-input
+                        <InputSquare
                           readonly
-                          square
-                          filled
                           v-model="UserData.middle_name"
                           label="Middle Name"
                         />
-                        <q-input
+                        <InputSquare
                           readonly
-                          square
-                          filled
                           v-model="UserData.last_name"
                           label="Last Name"
                         />
 
-                        <q-select
+                        <SelectInput
                           readonly
-                          square
-                          filled
                           v-model="UserData.gender"
-                          :options="SelectOption.gender"
                           label="Gender"
+                          :options="SelectOption.gender"
                         />
-                        <q-input
+                        <InputSquare
                           readonly
-                          square
-                          filled
                           v-model="UserData.birthdate"
+                          label="Birthdate"
                           type="date"
                         />
-                        <q-input
+                        <InputSquare
                           readonly
-                          square
-                          filled
                           v-model="UserData.email_address"
-                          type="email"
                           label="Email Address"
+                          type="email"
                         />
-
-                        <q-input
+                        <InputSquare
                           readonly
-                          filled
                           v-model="UserData.phone"
                           label="Phone Number"
-                          mask="#### ### ####"
                           fill-mask
+                          mask="#### ### ####"
                         />
                       </div>
 
                       <div class="text-h4 q-mb-md pt-4">Address</div>
                       <div class="grid grid-cols-3 gap-4">
-                        <q-input
+                        <InputSquare
                           readonly
-                          square
-                          filled
                           v-model="UserData.street"
                           label="Street"
                         />
-                        <q-input
+                        <InputSquare
                           readonly
-                          square
-                          filled
                           v-model="UserData.barangay"
                           label="Barangay"
                         />
-                        <q-input
+                        <InputSquare
                           readonly
-                          square
-                          filled
                           v-model="UserData.city"
                           label="City"
                         />
 
-                        <q-select
+                        <SelectInput
                           readonly
-                          square
-                          filled
                           v-model="UserData.province"
                           :options="SelectOption.province"
                           label="Province"
                         />
-                        <q-select
+
+                        <SelectInput
                           readonly
-                          square
-                          filled
                           v-model="UserData.country"
                           :options="SelectOption.country"
                           label="Country"
@@ -418,28 +396,16 @@
 </template>
 
 <script setup>
-import { ref, reactive } from "vue";
+import { ref } from "vue";
 
 import InputRounded from "../../components/input/InputFieldRounded.vue";
 import InputSquare from "../../components/input/InputFieldSquare.vue";
+import SelectInput from "../../components/select/SelectInput.vue";
 
-import { UserData } from "../../constants/global_constants";
+import { UserData, SelectOption } from "../../constants/global_constants";
 
 const gender = ref(null); //Default Value for Gender
 const tab = ref("edit_profile"); //Default Tab View
-
-const SelectOption = reactive({
-  country: ["Philippines"],
-  gender: ["Male", "Female"],
-  province: [
-    "Aklan",
-    "Antique",
-    "Capiz",
-    "Iloilo",
-    "Guimaras",
-    "Negros Occidental",
-  ],
-});
 </script>
 
 <style scoped></style>

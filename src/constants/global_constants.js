@@ -43,3 +43,31 @@ export const UserData = reactive({
   demos_sys: "Super Admin",
   barangay_sys: "Super Admin",
 });
+
+export const SelectOption = reactive({
+  country: ["Philippines"],
+  gender: ["Male", "Female"],
+  province: [
+    "Aklan",
+    "Antique",
+    "Capiz",
+    "Iloilo",
+    "Guimaras",
+    "Negros Occidental",
+  ],
+  user_role: [
+    "ADMIN",
+    "BARANGAY ENCODERS",
+    "CLERK",
+    "CONTROLLER",
+    "DATA ENCODERS",
+    "DOCTOR",
+    "ENCODER",
+    "HELPDESK",
+    "PROCESSORS",
+    "SUPER ADMIN",
+    "VALIDATORS",
+    "VIEWER",
+  ],
+  user_permission: ["create", "read", "update", "delete"],
+});
