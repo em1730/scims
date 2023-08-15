@@ -71,3 +71,18 @@ export const SelectOption = reactive({
   ],
   user_permission: ["create", "read", "update", "delete"],
 });
+
+export const Module = reactive({
+  //Module Columns module, title, option
+  columns: [
+    { name: "ID", field: "id", label: "ID", sortable: true, align: "left" },
+    {
+      name: "Name",
+      field: "name",
+      label: "Full Name",
+      sortable: true,
+      align: "left",
+    },
+    { name: "actions", label: "Action", align: "center" },
+  ],
+});
