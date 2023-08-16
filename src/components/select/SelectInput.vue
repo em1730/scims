@@ -1,13 +1,9 @@
 <template>
-  <q-input square filled :label="label" :type="type"  :mask="mask"/>
+  <q-select square filled :label="label" />
 </template>
-
 <script setup>
 const props = defineProps({
   label: String,
-  type: String,
-  mask: String,
 });
 </script>
-
 <style lang=""></style>
