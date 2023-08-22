@@ -2,8 +2,8 @@
   <q-page>
     <q-card class="my-card q-mt-lg q-mx-xl q-mx-auto justify-between bg-transparent" flat dense style="width:1200px">
       <q-card-section class="row q-gutter-y-md q-mx-auto justify-between">
-        <q-btn rounded size="13px" label="BACK" color="grey-7" style="width:120px" />
-        <q-btn @click="newUserDialog = true" rounded size="13px" label="NEW USER" color="grey-7" style="width:120px" />
+        <q-btn to="/" rounded size="13px" label="BACK" color="grey-7" style="width:120px" />
+        <q-btn to="/endUserRegister" rounded size="13px" label="NEW USER" color="grey-7" style="width:120px" />
       </q-card-section>
     </q-card>
     <q-card class="my-card q-mx-auto q-gutter-y-md justify-between" style="width:1200px">
@@ -90,7 +90,6 @@
 <script setup>
 import { ref, reactive } from 'vue'
 
-const newUserDialog = ref(false)
 const separator = ref('horizontal')
 const columns = [
   {
