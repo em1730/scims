@@ -86,3 +86,32 @@ export const Module = reactive({
     { name: "actions", label: "Action", align: "center" },
   ],
 });
+
+export const Barangay = reactive({
+  //Module Columns module, title, option
+  columns: [
+    {
+      name: "barangay_code",
+      field: "barangay_code",
+      label: "CODE",
+      align: "center",
+      sortable: true,
+      headerStyle:
+        "width: 500px; color:black; font-size:18px; bold: true; align:center",
+    },
+    {
+      name: "barangay_name",
+      field: "barangay_name",
+      label: "BARANGAY NAME",
+      align: "center",
+      sortable: true,
+      headerStyle: "width: 500px; color:black; font-size:18px; bold: true",
+    },
+    {
+      name: "options",
+      label: "OPTION",
+      align: "center",
+      headerStyle: "width: 500px; color:black; font-size:18px; bold:true",
+    },
+  ],
+});
