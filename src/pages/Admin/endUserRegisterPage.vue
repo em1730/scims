@@ -18,8 +18,8 @@
                 <div class="q-gutter-md row items-start">
                   <div>
                     <div class="text-caption">SELECT INDIVIDUAL</div>
-                    <q-select dense v-model="endUserPersonalInfo.entityNo" outlined :options="departments" emit-value
-                      option-value="department_name" option-label="department_name" use-input
+                    <q-select dense v-model="endUserPersonalInfo.selectIndividual" outlined :options="departments"
+                      emit-value option-value="department_name" option-label="department_name" use-input
                       @new-value="addNewValuedepartments" behavior="menu" style="width:150px" />
                   </div>
                   <div>
@@ -29,33 +29,31 @@
                   </div>
                   <div>
                     <div class="text-caption">FULL NAME</div>
-                    <q-input v-model="endUserPersonalInfo.entityNo" outlined square filled dense flat style="width:300px"
+                    <q-input v-model="endUserPersonalInfo.fullName" outlined square filled dense flat style="width:300px"
                       placeholder="(FIRST NAME, MIDDLE INITIAL, LAST NAME)" />
                   </div>
                   <div>
                     <div class="text-caption">GENDER</div>
-                    <q-input v-model="endUserPersonalInfo.entityNo" outlined square filled dense flat
-                      style="width:150px" />
+                    <q-input v-model="endUserPersonalInfo.gender" outlined square filled dense flat style="width:150px" />
                   </div>
                   <div>
                     <div class="text-caption">DATE OF BIRTH</div>
-                    <q-input v-model="endUserPersonalInfo.entityNo" type="date" outlined square filled dense flat
+                    <q-input v-model="endUserPersonalInfo.dateOfBirth" type="date" outlined square filled dense flat
                       style="width:150px" />
                   </div>
                   <div>
                     <div class="text-caption">MOBILE NUMBER</div>
-                    <q-input v-model="endUserPersonalInfo.entityNo" outlined square filled dense flat
-                      style="width:150px" />
+                    <q-input v-model="endUserPersonalInfo.mobileNo" mask="###########" fill-mask="#" outlined square
+                      filled dense flat style="width:150px" />
                   </div>
                   <div>
                     <div class="text-caption">HOME ADDRESS</div>
-                    <q-input v-model="endUserPersonalInfo.entityNo" outlined square filled dense flat
+                    <q-input v-model="endUserPersonalInfo.homeAddress" outlined square filled dense flat
                       placeholder="(STREET, BARANGAY, CITY, PROVINCE, COUNTRY)" style="width:467px" />
                   </div>
                   <div>
                     <div class="text-caption">EMAIL ADDRESS</div>
-                    <q-input v-model="endUserPersonalInfo.entityNo" outlined square filled dense flat
-                      style="width:150px" />
+                    <q-input v-model="endUserPersonalInfo.email" outlined square filled dense flat style="width:150px" />
                   </div>
                 </div>
               </div>
@@ -67,27 +65,27 @@
               <div class="q-gutter-md row items-start">
                 <div>
                   <div class="text-caption">USERNAME</div>
-                  <q-input v-model="endUserPersonalInfo.entityNo" outlined square dense flat style="width:310px" />
+                  <q-input v-model="endUserAccountInfo.username" outlined square dense flat style="width:310px" />
                 </div>
                 <div>
                   <div class="text-caption">PASSWORD</div>
-                  <q-input v-model="endUserPersonalInfo.entityNo" outlined square filled dense flat style="width:310px" />
+                  <q-input v-model="endUserAccountInfo.password" outlined square filled dense flat style="width:310px" />
                 </div>
                 <div>
                   <div class="text-caption">JOB DESIGNATION</div>
-                  <q-input v-model="endUserPersonalInfo.entityNo" outlined square dense flat style="width:310px" />
+                  <q-input v-model="endUserAccountInfo.jobDesignation" outlined square dense flat style="width:310px" />
                 </div>
                 <div>
                   <div class="text-caption">DEPARTMENT</div>
-                  <q-select model="endUserPersonalInfo.entityNo" outlined square dense flat style="width:310px" />
+                  <q-select v-model="endUserAccountInfo.department" outlined square dense flat style="width:310px" />
                 </div>
                 <div>
                   <div class="text-caption">DIVISION</div>
-                  <q-select v-model="endUserPersonalInfo.entityNo" outlined square dense flat style="width:310px" />
+                  <q-select v-model="endUserPersonalInfo.division" outlined square dense flat style="width:310px" />
                 </div>
                 <div>
                   <div class="text-caption">SECTION</div>
-                  <q-select v-model="endUserPersonalInfo.entityNo" outlined square dense flat style="width:310px" />
+                  <q-select v-model="endUserPersonalInfo.section" outlined square dense flat style="width:310px" />
                 </div>
               </div>
             </q-card-section>
