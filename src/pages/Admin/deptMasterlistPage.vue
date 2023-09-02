@@ -94,7 +94,7 @@
 
                 <!--Division-->
                 <q-dialog v-model="divDialog">
-                  <q-card style="width: 850px; max-width: 80vw; height: 400px">
+                  <q-card style="width: 900px; max-width: 80vw; height: 900px">
                     <q-bar dark class="bg-gray-800 text-white">
                       <div class="col text-center text-weight-bold">
                         DIVISION
@@ -130,7 +130,7 @@
                             </q-card-section>
                           </q-card>
 
-                          <q-card style="width: 500px; max-width: 80vw; height: 310px">
+                          <q-card style="width: 560px; max-width: 80vw; height: 310px">
                             <q-card-section>
                               <InputRounded class="pb-5 uppercase" label="Select Department Name"
                                 v-model="userForm.department_name" />
@@ -210,7 +210,11 @@
                                     <router-link to="/masterList">
 
                                     </router-link>
-                                    <TwBtn @click="handlesDialog()">New Division</TwBtn>
+                                    <!-- <TwBtn @click="handlesDialog()" >New Division</TwBtn> -->
+                                    <router-link to="/newDivision">
+                                      <TwBtn>New Division</TwBtn>
+                                    </router-link>
+
 
                                   </div>
                                   <div class="flex justify-end w-full">

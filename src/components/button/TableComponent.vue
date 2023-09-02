@@ -1,8 +1,8 @@
 <template>
   <div>
-    <q-btn @click="addTable" rounded icon="add" dense class="bg-gray-800 text-white">Add Section</q-btn>
+    <q-btn @click="addTable" rounded icon="add" dense class="rounded-lg bg-gray-800 text-white">Add Section</q-btn>
     <div class="q-pa-md">
-      <table v-if="showTable">
+      <table v-if="showTable" :class="'rounded-lg'">
         <thead>
           <tr>
             <th><q-btn flat rounded icon="add" color="red" @click="addField" /></th>
@@ -18,12 +18,14 @@
           </tr>
         </tbody>
       </table>
+
     </div>
 
   </div>
 </template>
 
 <script>
+
 export default {
   props: ['value'],
   data() {
@@ -31,7 +33,33 @@ export default {
       fieldValue: this.value || '',
       showTable: false,
       tableData: [],
-      fields: [''] // Initial field
+      fields: [''], // Initial field
+      columns:[
+    {
+      name: "options",
+      icon: "add",
+      align: "center",
+      headerStyle: "width: 500px; color:black; font-size:18px; bold:true",
+
+    },
+    {
+      name: "section_code",
+      field: "section_code",
+      label: "CODE",
+      align: "center",
+      sortable: true,
+      headerStyle:
+        "width: 500px; color:black; font-size:18px; bold: true; align:center",
+    },
+    {
+      name: "section_name",
+      field: "section_name",
+      label: "SECTION",
+      align: "center",
+      sortable: true,
+      headerStyle: "width: 500px; color:black; font-size:18px; bold: true",
+    },
+  ],
     };
   },
   methods: {
@@ -47,8 +75,8 @@ export default {
     },
     watch: {
       fieldValue(newValue) {
-      this.$emit('input', newValue);
-    }
+        this.$emit('input', newValue);
+      }
     },
     addField() {
       this.fields.push('');
@@ -61,10 +89,10 @@ export default {
 table {
   border-collapse: collapse;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 5px;
 }
 
-th, td {
+th,td {
   border: 1px solid #706f6fdd;
   background-color: #e5e7eb;
   text-align: center;
