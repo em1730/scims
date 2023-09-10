@@ -1,6 +1,7 @@
 import { boot } from 'quasar/wrappers'
 import axios from 'axios'
-
+import { AuthStore } from 'src/stores/AuthStore'
+const auth = AuthStore();
 // Be careful when using SSR for cross-request state pollution
 // due to creating a Singleton instance here;
 // If any client changes this (global) instance, it might be a
@@ -8,8 +9,17 @@ import axios from 'axios'
 // "export default () => {}" function below (which runs individually
 // for each client)
 // const api = axios.create({ baseURL: 'https://api.example.com' })
-const api = axios.create({ baseURL: 'https://jsonplaceholder.typicode.com/users' })
+const localhost = 'http://localhost:8000/api'
+const api = axios.create({ baseURL: localhost})
 
+api.interceptors.request.use((config) => {
+  const token = auth.token;
+
+  if (token) {
+    config.headers["Authorization"] = `Bearer ${token}`;
+  }
+    return config;
+});
 export default boot(({ app }) => {
   // for use inside Vue files (Options API) through this.$axios and this.$api
 

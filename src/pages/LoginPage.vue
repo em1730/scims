@@ -23,13 +23,14 @@
                 />
               </div>
               <div class="flex-auto p-6">
-                <form role="form" method="POST">
+                <form @submit="Login">
                   <label class="mb-2 ml-1 font-bold text-normal text-black"
                     >Username</label
                   >
                   <div class="mb-4">
                     <input
                       required
+                      v-model="username"
                       type="text"
                       name="username"
                       id="username"
@@ -45,6 +46,7 @@
                   <div class="mb-4">
                     <input
                       required
+                      v-model="password"
                       type="password"
                       name="password"
                       id="password"
@@ -55,15 +57,16 @@
                     />
                   </div>
                   <div class="text-center">
-                    <router-link to="/">
-                      <button
-                        name="login"
-                        id="login"
-                        class="w-full px-6 py-3 rounded-md transition-color duration-200 ease-soft-in-out bg-gradient-to-tl from-slate-900 to-slate-600 hover:scale-105 hover:shadow-soft-xs text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                      >
-                        Login
-                      </button>
-                    </router-link>
+
+                    <button
+                      name="login"
+                      type="submit"
+                      id="login"
+                      class="w-full px-6 py-3 rounded-md transition-color duration-200 ease-soft-in-out bg-gradient-to-tl from-slate-900 to-slate-600 hover:scale-105 hover:shadow-soft-xs text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                      Login
+                    </button>
+
                   </div>
                 </form>
               </div>
@@ -87,7 +90,32 @@
   </transition>
 </template>
 
-<script setup></script>
+<script setup>
+import { api } from "src/boot/axios";
+import { AuthStore } from "src/stores/AuthStore";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+const user = AuthStore();
+const username = ref();
+const password = ref();
+const $router = useRouter();
+async function Login(e) {
+  e.preventDefault();
+  await api
+    .post("/login", {
+      username: username.value,
+      password: password.value,
+    })
+    .then((response) => {
+      user.login({token:response.data.token,user:response.data.fullname});
+      if(user.token){
+        $router.push('/dashboard');
+      }
+    }).catch((error)=>{
+
+    });
+}
+</script>
 
 <style scoped>
 .colored-toast.swal2-icon-success {
