@@ -10,7 +10,7 @@
           <div class="pb-10">
             <div class="grid grid-cols-1 gap-4">
               <div class="flex justify-between w-full">
-                <router-link to="/">
+                <router-link to="/masterList">
                   <TwBtn>Back</TwBtn>
                 </router-link>
               </div>

@@ -69,7 +69,7 @@
 
                             <template v-slot:top>
                               <div class="flex justify-between w-full">
-                                <router-link to="/">
+                                <router-link to="/administration">
                                   <TwBtn>Back</TwBtn>
                                 </router-link>
                                 <TwBtn @click="dialog = true">New Module</TwBtn>
