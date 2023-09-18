@@ -203,13 +203,4 @@ export const Section = reactive({
         },
     ],
 
-
-
-
-
-
-
-
-
-
 });
