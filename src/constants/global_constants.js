@@ -114,3 +114,93 @@ export const Barangay = reactive({
         },
     ],
 });
+
+export const Department = reactive({
+    //Module Columns module, title, option
+    columns: [{
+            name: "department_code",
+            field: "department_code",
+            label: "CODE",
+            align: "center",
+            sortable: true,
+            headerStyle: "width: 500px; color:black; font-size:18px; bold: true; align:center",
+        },
+        {
+            name: "department_name",
+            field: "department_name",
+            label: "DEPARTMENT NAME",
+            align: "center",
+            sortable: true,
+            headerStyle: "width: 500px; color:black; font-size:18px; bold: true",
+        },
+        {
+            name: "options",
+            label: "OPTION",
+            align: "center",
+            headerStyle: "width: 500px; color:black; font-size:18px; bold:true",
+        },
+    ],
+});
+
+export const Division = reactive({
+    //Module Columns module, title, option
+    columns: [{
+            name: "division_code",
+            field: "division_code",
+            label: "CODE",
+            align: "center",
+            sortable: true,
+            headerStyle: "width: 500px; color:black; font-size:18px; bold: true; align:center",
+        },
+        {
+            name: "division_name",
+            field: "division_name",
+            label: "DIVISION",
+            align: "center",
+            sortable: true,
+            headerStyle: "width: 500px; color:black; font-size:18px; bold: true",
+        },
+        {
+            name: "section_name",
+            field: "section_name",
+            label: "SECTION",
+            align: "center",
+            sortable: true,
+            headerStyle: "width: 500px; color:black; font-size:18px; bold: true",
+        },
+        {
+            name: "options",
+            label: "OPTION",
+            align: "center",
+            headerStyle: "width: 500px; color:black; font-size:18px; bold:true",
+        },
+    ],
+});
+
+export const Section = reactive({
+    //Module Columns module, title, option
+    columns: [{
+            name: "options",
+            icon: "add",
+            align: "center",
+            headerStyle: "width: 500px; color:black; font-size:18px; bold:true",
+        },
+        {
+            name: "section_code",
+            field: "section_code",
+            label: "CODE",
+            align: "center",
+            sortable: true,
+            headerStyle: "width: 500px; color:black; font-size:18px; bold: true; align:center",
+        },
+        {
+            name: "section_name",
+            field: "section_name",
+            label: "SECTION",
+            align: "center",
+            sortable: true,
+            headerStyle: "width: 500px; color:black; font-size:18px; bold: true",
+        },
+    ],
+
+});
