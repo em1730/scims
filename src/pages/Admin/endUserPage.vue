@@ -7,7 +7,7 @@
       </q-card-section>
     </q-card>
     <q-card class="my-card q-mx-auto q-gutter-y-md justify-between" style="width:1200px">
-      <q-card-section class="bg-blue-grey-9 text-white text-center q-pa-sm">
+      <q-card-section class="bg-gradient-to-tl from-gray-800 to-slate-700 drop-shadow-2xl text-white text-center q-pa-sm">
         <div class="text-h6">END USER MANAGEMENT</div>
       </q-card-section>
       <q-card-section class="">
@@ -29,61 +29,6 @@
         </q-table>
       </q-card-section>
     </q-card>
-    <q-dialog v-model="newUserDialog" style="width:auto">
-      <div class="row q-gutter-x-md justify-between">
-        <q-card class="my-card" style="width:1000px">
-          <q-card-section class="bg-blue-grey-5 text-white q-pa-sm" style="height:50px">
-            <div class="text-h6 text-center">PERSONAL INFORMATION</div>
-          </q-card-section>
-          <q-card-section>
-            <q-form class="">
-              <div class="q-gutter-y-sm">
-                <div class="row q-gutter-x-md justify-between">
-                  <div class="col-3">
-                    <div class="text-caption">SELECT INDIVIDUAL</div>
-                    <q-select dense v-model="endUserPersonalInfo.entityNo" outlined :options="departments" emit-value
-                      option-value="department_name" option-label="department_name" use-input
-                      @new-value="addNewValuedepartments" />
-                  </div>
-                  <div class="col-3">
-                    <div class="text-caption">ENTITY NO.</div>
-                    <q-input v-model="endUserPersonalInfo.entityNo" outlined square filled dense flat />
-                  </div>
-                  <div class="col-4">
-                    <div class="text-caption">FULL NAME</div>
-                    <q-input v-model="endUserPersonalInfo.entityNo" outlined square filled dense flat />
-                  </div>
-
-                </div>
-
-                <div class="row q-gutter-x-md justify-between">
-                  <div class="col-3 ">
-                    <div class="text-caption">MOBILE NUMBER</div>
-                    <q-input v-model="endUserPersonalInfo.mobileNo" mask="###########" outlined square filled dense
-                      flat />
-                  </div>
-                  <div class="col-4">
-                    <div class="text-caption">ENTITY NUMBER</div>
-                    <q-input v-model="endUserPersonalInfo.entityNo" outlined square filled dense flat />
-                  </div>
-                  <div class="col-3">
-                    <div class="text-caption">FULL NAME</div>
-                    <q-input v-model="endUserPersonalInfo.fullName" outlined square filled dense flat />
-                  </div>
-                </div>
-              </div>
-            </q-form>
-          </q-card-section>
-        </q-card>
-        <!-- <div class="col-5">
-          <q-card class="my-card" style="width:auto">
-            <q-card-section class="bg-teal-9 text-white q-pa-sm" style="height:50px">
-              <div class="text-h6">This is a card</div>
-            </q-card-section>
-          </q-card>
-        </div> -->
-      </div>
-    </q-dialog>
   </q-page>
 </template>
 
@@ -96,7 +41,7 @@ const columns = [
     name: 'entity_no',
     required: true,
     label: 'ENTITY NO.',
-    align: 'center',
+    align: 'left',
     field: row => row.entity_no,
     format: val => `${val}`,
     sortable: true

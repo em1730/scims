@@ -24,6 +24,10 @@ const routes = [
         component: () => import("pages/Admin/endUserPage.vue"),
       },
       {
+        path: "/endUserRegister",
+        component: () => import("pages/Admin/endUserRegisterPage.vue"),
+      },
+      {
         path: "/userLogs",
         component: () => import("pages/Admin/userLogsPage.vue"),
       },
