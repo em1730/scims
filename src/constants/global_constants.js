@@ -115,3 +115,34 @@ export const Barangay = reactive({
     },
   ],
 });
+
+
+export const DocMasterlist = reactive({
+  //Module Columns module, title, option
+  columns: [
+    {
+      name: "document_code",
+      field: "document_code",
+      label: "CODE",
+      align: "center",
+      sortable: true,
+      headerStyle:
+        "width: 500px; color:black; font-size:18px; bold: true; align:center",
+    },
+    {
+      name: "document_name",
+      field: "document_name",
+      label: "TYPE OF DOCUMENT",
+      align: "center",
+      sortable: true,
+      headerStyle: "width: 500px; color:black; font-size:18px; bold: true",
+    },
+    {
+      name: "options",
+      label: "OPTION",
+      align: "center",
+      headerStyle: "width: 500px; color:black; font-size:18px; bold:true",
+    },
+  ],
+});
+
