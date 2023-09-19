@@ -71,6 +71,10 @@ const routes = [
         path: "/seniorcitizen",
         component: () => import("pages/Admin/seniorCitizenPage.vue"),
       },
+      {
+        path: "/newDivision",
+        component: () => import("pages/Admin/newDivisionPage.vue"),
+      }
     ],
   },
 
