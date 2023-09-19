@@ -160,7 +160,7 @@
                   <q-card class="my-card border-gray-400 drop-shadow-2xl" flat bordered>
                     <q-splitter v-model="splitterModel" style="height: 450px">
                       <template v-slot:before>
-                        <q-tabs v-model="tab" vertical class="bg-gray-800 p-2 rounded-t-md text-white" align="left">
+                        <q-tabs v-model="tab" vertical class="bg-gray-800 p-2 rounded-lg text-white" align="left">
                           <q-tab name="department" label="DEPARTMENT" />
                           <q-tab name="division" label="DIVISION" />
                         </q-tabs>
