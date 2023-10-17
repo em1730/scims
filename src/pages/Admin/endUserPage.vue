@@ -35,6 +35,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
+import { api } from 'boot/axios'
 
 const separator = ref('horizontal')
 const columns = [
@@ -87,29 +88,19 @@ const rows = [
 
 ]
 
-const endUserPersonalInfo = reactive({
-  selectIndividual: "",
-  entityNo: "",
-  fullName: "",
-  gender: "",
-  dateOfBirth: "",
-  mobileNo: "",
-  homeAddress: "",
-  email: "",
-})
-const endUserAccountInfo = reactive({
-  username: "",
-  password: "",
-  jobDesignation: "",
-  department: "",
-  division: "",
-  section: "",
+
+const endUserInfo = ref({
+
 })
 
-// const endUserModulesVamos = reactive({
-//   admin:"",
+async function fetchEndUser() {
+  const res = await api.get('api/users')
 
-// })
+  endUserInfo.value = res.data
+
+}
+fetchEndUser()
+
 </script>
 
 <style lang="scss" scoped></style>
