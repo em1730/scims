@@ -233,9 +233,7 @@
 <script setup>
 import { ref, reactive } from 'vue'
 //for customize input
-import InputFieldRoundedVue from 'src/components/input/InputFieldRounded.vue'
-import TwInput from 'src/components/input/TwInput.vue';
-import LoginLayout from 'src/layouts/LoginLayout.vue';
+
 
 const radioBtn = ref('line')
 const text = ref("Admin")
