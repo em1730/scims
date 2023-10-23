@@ -1,31 +1,31 @@
 <template>
   <q-page padding>
-    <q-card class="my-card q-mt-md q-mx-xl q-mx-auto justify-between bg-transparent" flat dense style="width:1200px">
-      <q-card-section class="row q-gutter-y-md q-mx-auto justify-between">
-        <q-btn to="/endUser" rounded size="13px" label="BACK" color="grey-7" style="width:120px" />
-        <q-btn rounded size="13px" label="SAVE" color="grey-7" style="width:120px" />
-      </q-card-section>
-    </q-card>
-    <q-form class="reduce-height-form">
-      <div class="row q-gutter-x-sm justify-between">
-        <div class="col-md-5 q-px-sm">
-          <q-card class="my-card" style="width:1000px">
-            <q-card-section class="bg-blue-grey-9 text-white q-pa-sm" style="height:45px">
+    <q-card class="my-card q-mt-sm q-mx-auto bg-transparent justify-center" flat dense style="width:1180px">
+      <div>
+        <q-card-section class="row q-gutter-y-md q-mx-auto justify-between">
+          <q-btn to="/endUser" rounded size="13px" label="BACK" color="grey-7" style="width:120px" />
+          <q-btn rounded size="13px" label="SAVE" color="grey-7" style="width:120px" />
+        </q-card-section>
+      </div>
+      <div class="individual-select">
+        <q-form class="row reduce-height-form q-gutter-x-md justify-between ">
+          <q-card class="my-card" style="width:910px">
+            <q-card-section class="bg-blue-grey-7 text-white q-pa-sm" style="height:45px">
               <div class="text-h6 text-center">PERSONAL INFORMATION</div>
             </q-card-section>
             <q-card-section>
               <div class="">
-                <div class="q-gutter-md row items-start">
+                <div class="q-gutter-x-md q-gutter-y-sm row items-start">
                   <div>
                     <div class="text-caption">SELECT INDIVIDUAL</div>
                     <q-select dense v-model="endUserPersonalInfo.selectIndividual" outlined :options="departments"
                       emit-value option-value="department_name" option-label="department_name" use-input
-                      @new-value="addNewValuedepartments" behavior="menu" style="width:150px" />
+                      @new-value="addNewValuedepartments" behavior="menu" style="width:127px" />
                   </div>
                   <div>
                     <div class="text-caption">ENTITY NO.</div>
                     <q-input v-model="endUserPersonalInfo.entityNo" dense outlined square filled flat
-                      style="width:150px" />
+                      style="width:120px" />
                   </div>
                   <div>
                     <div class="text-caption">FULL NAME</div>
@@ -34,69 +34,70 @@
                   </div>
                   <div>
                     <div class="text-caption">GENDER</div>
-                    <q-input v-model="endUserPersonalInfo.gender" outlined square filled dense flat style="width:150px" />
+                    <q-input v-model="endUserPersonalInfo.gender" outlined square filled dense flat style="width:120px" />
                   </div>
                   <div>
                     <div class="text-caption">DATE OF BIRTH</div>
                     <q-input v-model="endUserPersonalInfo.dateOfBirth" type="date" outlined square filled dense flat
-                      style="width:150px" />
+                      style="width:145px" />
                   </div>
                   <div>
                     <div class="text-caption">MOBILE NUMBER</div>
                     <q-input v-model="endUserPersonalInfo.mobileNo" mask="###########" fill-mask="#" outlined square
-                      filled dense flat style="width:150px" />
+                      filled dense flat style="width:127px" />
                   </div>
                   <div>
                     <div class="text-caption">HOME ADDRESS</div>
                     <q-input v-model="endUserPersonalInfo.homeAddress" outlined square filled dense flat
-                      placeholder="(STREET, BARANGAY, CITY, PROVINCE, COUNTRY)" style="width:467px" />
+                      placeholder="(STREET, BARANGAY, CITY, PROVINCE, COUNTRY)" style="width:437px" />
                   </div>
                   <div>
                     <div class="text-caption">EMAIL ADDRESS</div>
-                    <q-input v-model="endUserPersonalInfo.email" outlined square filled dense flat style="width:150px" />
+                    <q-input v-model="endUserPersonalInfo.email" outlined square filled dense flat style="width:200px" />
                   </div>
+
                 </div>
               </div>
             </q-card-section>
-            <q-card-section class="bg-blue-grey-9 text-white q-pa-sm" style="height:45px">
+            <q-card-section class="bg-blue-grey-7 text-white q-pa-sm" style="height:45px">
               <div class="text-h6 text-center">ACCOUNT INFORMATION</div>
             </q-card-section>
             <q-card-section>
-              <div class="q-gutter-md row items-start">
+              <div class="q-gutter-x-md q-gutter-y-sm row items-start">
                 <div>
                   <div class="text-caption">USERNAME</div>
-                  <q-input v-model="endUserAccountInfo.username" outlined square dense flat style="width:310px" />
+                  <q-input v-model="endUserAccountInfo.username" outlined square dense flat style="width:280px" />
                 </div>
                 <div>
                   <div class="text-caption">PASSWORD</div>
-                  <q-input v-model="endUserAccountInfo.password" outlined square filled dense flat style="width:310px" />
+                  <q-input v-model="endUserAccountInfo.password" outlined square filled dense flat style="width:280px" />
                 </div>
                 <div>
                   <div class="text-caption">JOB DESIGNATION</div>
-                  <q-input v-model="endUserAccountInfo.jobDesignation" outlined square dense flat style="width:310px" />
+                  <q-input v-model="endUserAccountInfo.jobDesignation" outlined square dense flat style="width:280px" />
                 </div>
                 <div>
                   <div class="text-caption">DEPARTMENT</div>
-                  <q-select v-model="endUserAccountInfo.department" outlined square dense flat style="width:310px" />
+                  <q-select v-model="endUserAccountInfo.department" outlined dense flat style="width:280px" />
                 </div>
                 <div>
                   <div class="text-caption">DIVISION</div>
-                  <q-select v-model="endUserPersonalInfo.division" outlined square dense flat style="width:310px" />
+                  <q-select v-model="endUserPersonalInfo.division" outlined dense flat style="width:280px" />
                 </div>
                 <div>
                   <div class="text-caption">SECTION</div>
-                  <q-select v-model="endUserPersonalInfo.section" outlined square dense flat style="width:310px" />
+                  <q-select v-model="endUserPersonalInfo.section" outlined dense flat style="width:280px" />
                 </div>
               </div>
             </q-card-section>
-            <q-card-section class="bg-blue-grey-9 text-white q-pa-sm" style="height:45px">
+            <q-card-section class="bg-blue-grey-7 text-white q-pa-sm" style="height:45px">
               <div class="text-h6 text-center">MODULES</div>
             </q-card-section>
-            <q-card-section>
+            <q-card-section class="">
               <div class=" q-mb-md">
                 <div class="row text-caption">VAMOS</div>
                 <div class="row q-gutter-x-none items-start">
-                  <q-field standout dense label-color="orange" outlined stack-label style="width: 192px ;">
+                  <q-field standout dense label-color="orange" outlined stack-label style="width: 170px ;">
                     <template v-slot:prepend>
                       <q-radio dense v-model="radioBtn" val="line" color="cyan" />
                     </template>
@@ -104,7 +105,7 @@
                       <div class="self-center full-width no-outline" tabindex="0">ADMIN</div>
                     </template>
                   </q-field>
-                  <q-field standout dense label-color="orange" outlined stack-label style="width: 192px ;">
+                  <q-field standout dense label-color="orange" outlined stack-label style="width: 170px ;">
                     <template v-slot:prepend>
                       <q-radio dense v-model="radioBtn" val="line2" color="cyan" />
                     </template>
@@ -112,16 +113,16 @@
                       <div class="self-center full-width no-outline" tabindex="0">HELPDESK</div>
                     </template>
                   </q-field>
-                  <q-field standout dense label-color="orange" outlined stack-label style="width: 200px ;">
+                  <q-field standout dense label-color="orange" outlined stack-label style="width: 198px ;">
                     <template v-slot:prepend>
                       <q-radio dense v-model="radioBtn" val="line3" color="cyan" />
                     </template>
                     <template v-slot:control>
-                      <div class="self-center full-width no-outline" tabindex="0">BARANGAY ENDODERS</div>
+                      <div class="self-center full-width no-outline" tabindex="0">BARANGAY ENCODERS</div>
                     </template>
                   </q-field>
 
-                  <q-field standout dense label-color="orange" outlined stack-label style="width: 192px ;">
+                  <q-field standout dense label-color="orange" outlined stack-label style="width: 170px ;">
                     <template v-slot:prepend>
                       <q-radio dense v-model="radioBtn" val="line4" color="cyan" />
                     </template>
@@ -131,7 +132,7 @@
                   </q-field>
 
 
-                  <q-field standout dense label-color="orange" outlined stack-label style="width: 192px ;">
+                  <q-field standout dense label-color="orange" outlined stack-label style="width: 170px ;">
                     <template v-slot:prepend>
                       <q-radio dense v-model="radioBtn" val="line5" color="cyan" />
                     </template>
@@ -144,7 +145,7 @@
               <div class="q-mb-md">
                 <div class="row text-caption">RESBAKUNA</div>
                 <div class="row q-gutter-x-none items-start">
-                  <q-field standout dense label-color="orange" outlined stack-label style="width: 320px ;">
+                  <q-field standout dense label-color="orange" outlined stack-label style="width: 292px ;">
                     <template v-slot:prepend>
                       <q-radio dense v-model="radioBtn" val="line2" color="cyan" />
                     </template>
@@ -152,7 +153,7 @@
                       <div class="self-center full-width no-outline" tabindex="0">ADMIN</div>
                     </template>
                   </q-field>
-                  <q-field standout dense label-color="orange" outlined stack-label style="width: 328px ;">
+                  <q-field standout dense label-color="orange" outlined stack-label style="width: 293px ;">
                     <template v-slot:prepend>
                       <q-radio dense v-model="radioBtn" val="line" color="cyan" />
                     </template>
@@ -160,7 +161,7 @@
                       <div class="self-center full-width no-outline" tabindex="0">HELPDESK</div>
                     </template>
                   </q-field>
-                  <q-field standout dense label-color="orange" outlined stack-label style="width: 320px  ;">
+                  <q-field standout dense label-color="orange" outlined stack-label style="width: 292px  ;">
                     <template v-slot:prepend>
                       <q-radio dense v-model="radioBtn" val="line3" color="cyan" />
                     </template>
@@ -173,7 +174,7 @@
               <div class="q-mb-md">
                 <div class="row text-caption">DOCUMENT TRACKING</div>
                 <div class="row q-gutter-x-none items-start">
-                  <q-field standout dense label-color="orange" outlined stack-label style="width: 240px ;">
+                  <q-field standout dense label-color="orange" outlined stack-label style="width: 219px ;">
                     <template v-slot:prepend>
                       <q-radio dense v-model="radioBtn" val="line3" color="cyan" />
                     </template>
@@ -181,7 +182,7 @@
                       <div class="self-center full-width no-outline" tabindex="0">ADMIN</div>
                     </template>
                   </q-field>
-                  <q-field standout dense label-color="orange" outlined stack-label style="width: 244px ;">
+                  <q-field standout dense label-color="orange" outlined stack-label style="width: 219px ;">
                     <template v-slot:prepend>
                       <q-radio dense v-model="radioBtn" val="line2" color="cyan" />
                     </template>
@@ -190,7 +191,7 @@
                     </template>
                   </q-field>
 
-                  <q-field standout dense label-color="orange" outlined stack-label style="width: 244px ;">
+                  <q-field standout dense label-color="orange" outlined stack-label style="width: 219px ;">
                     <template v-slot:prepend>
                       <q-radio dense v-model="radioBtn" val="line" color="cyan" />
                     </template>
@@ -198,9 +199,7 @@
                       <div class="self-center full-width no-outline" tabindex="0">DATA ENCODERS</div>
                     </template>
                   </q-field>
-
-
-                  <q-field standout dense label-color="orange" outlined stack-label style="width: 240px ;">
+                  <q-field standout dense label-color="orange" outlined stack-label style="width: 219px ;">
                     <template v-slot:prepend>
                       <q-radio dense v-model="radioBtn" val="line4" color="cyan" />
                     </template>
@@ -213,21 +212,21 @@
               </div>
             </q-card-section>
           </q-card>
-        </div>
-        <div class="col-3">
-          <q-card class="my-card" style="width:300px">
-            <q-card-section class="bg-blue-grey-9 text-white q-pa-sm" style="height:45px">
+          <q-card class="my-card" style="width:250px; height: 280px;">
+            <q-card-section class="bg-blue-grey-7 text-white q-pa-sm" style="height:45px">
               <div class="text-h6 text-center">PROFILE PHOTO</div>
             </q-card-section>
             <q-card-section class="flex flex-center q-ma-auto">
-              <q-avatar size="250px" class="q-ma-auto">
+              <q-avatar size="200px" class="q-ma-auto">
                 <img src="~assets/scc-logo.ico">
               </q-avatar>
             </q-card-section>
           </q-card>
-        </div>
+
+
+        </q-form>
       </div>
-    </q-form>
+    </q-card>
   </q-page>
 </template>
 
@@ -266,12 +265,12 @@ const endUserAccountInfo = reactive({
 </script>
 
 <style lang="scss" >
-// .individual-select {
-//   .q-field--outlined .q-field__control {
-//     border-radius: 10px;
-//     height: 3opx;
-//   }
-// }
+.individual-select {
+  .q-field--outlined .q-field__control {
+    border-radius: 12px;
+
+  }
+}
 </style>
 
 

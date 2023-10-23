@@ -1,13 +1,14 @@
 <template>
-  <q-page>
-    <q-card class="my-card q-mt-lg q-mx-xl q-mx-auto justify-between bg-transparent" flat dense style="width:1200px">
+  <q-page padding>
+    <q-card class="my-card q-mt-sm q-mx-xl q-mx-auto justify-between bg-transparent" flat dense style="width:1180px">
       <q-card-section class="row q-gutter-y-md q-mx-auto justify-between">
         <q-btn to="/" rounded size="13px" label="BACK" color="grey-7" style="width:120px" />
         <q-btn to="/endUserRegister" rounded size="13px" label="NEW USER" color="grey-7" style="width:120px" />
       </q-card-section>
     </q-card>
-    <q-card class="my-card q-mx-auto q-gutter-y-md justify-between" style="width:1200px">
-      <q-card-section class="bg-gradient-to-tl from-gray-800 to-slate-700 drop-shadow-2xl text-white text-center q-pa-sm">
+    <q-card class="my-card q-mx-auto q-gutter-y-md justify-between" style="width:1180px">
+      <!-- bg-gradient-to-tl from-gray-800 to-slate-700 drop-shadow-2xl -->
+      <q-card-section class="bg-blue-grey-7 text-white text-center q-pa-sm">
         <div class="text-h6">END USER MANAGEMENT</div>
       </q-card-section>
       <q-card-section class="">
