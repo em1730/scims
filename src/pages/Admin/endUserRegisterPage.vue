@@ -18,9 +18,28 @@
                 <div class="q-gutter-x-md q-gutter-y-sm row items-start">
                   <div>
                     <div class="text-caption">SELECT INDIVIDUAL</div>
-                    <q-select dense v-model="endUserPersonalInfo.selectIndividual" outlined :options="departments"
-                      emit-value option-value="department_name" option-label="department_name" use-input
-                      @new-value="addNewValuedepartments" behavior="menu" style="width:127px" />
+                    <q-input @update:model-value="searchVamosUser" dense v-model="selectIndividual" outlined
+                      style="width:127px" debounce="1000">
+                      <div v-if="selectIndividual" class="custom-list z-top">
+                        <q-card>
+                          <q-list seaprator>
+                            <q-item v-if="!vamosUser?.length">
+                              No record found.
+                            </q-item>
+                            <template v-else>
+                              <q-item @click="autoFillUser(user)" v-for="user in vamosUser" :key="user.id" clickable>
+                                <q-item-section avatar>
+                                  <q-icon name="person" />
+                                </q-item-section>
+                                <q-item-section>
+                                  <q-item-label>{{ user.fullname }}</q-item-label>
+                                </q-item-section>
+                              </q-item>
+                            </template>
+                          </q-list>
+                        </q-card>
+                      </div>
+                    </q-input>
                   </div>
                   <div>
                     <div class="text-caption">ENTITY NO.</div>
@@ -218,7 +237,7 @@
             </q-card-section>
             <q-card-section class="flex flex-center q-ma-auto">
               <q-avatar size="200px" class="q-ma-auto">
-                <img src="~assets/scc-logo.ico">
+                <img :src="`https://vamosmobile.app/sccdrrmo/flutter/images/${endUserPersonalInfo.photo}`">
               </q-avatar>
             </q-card-section>
           </q-card>
@@ -231,16 +250,40 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, computed } from 'vue'
+import { useVamosDataStore } from '../../stores/vamos-data'
+import { date } from 'quasar'
 //for customize input
-import InputFieldRoundedVue from 'src/components/input/InputFieldRounded.vue'
-import TwInput from 'src/components/input/TwInput.vue';
-import LoginLayout from 'src/layouts/LoginLayout.vue';
+
+const vamosData = useVamosDataStore();
+const vamosUser = computed(() => vamosData.vamosUserData)
+console.log(vamosUser);
+
+const searchVamosUser = (keyword) => {
+  vamosData.findVamosUserData(keyword)
+
+}
+
+const selectIndividual = ref('')
+const autoFillUser = (data) => {
+  console.log(data);
+  endUserPersonalInfo.entityNo = data.entity_no
+  endUserPersonalInfo.fullName = `${data.firstname} ${data.middlename} ${data.lastname}`
+  endUserPersonalInfo.gender = data.gender
+  endUserPersonalInfo.dateOfBirth = date.formatDate(data.birthdate, "YYYY-MM-DD")
+  endUserPersonalInfo.mobileNo = data.mobile_no
+  endUserPersonalInfo.homeAddress = `${data.street} ${data.barangay} ${data.city} ${data.province} `
+  endUserPersonalInfo.email = data.email
+  endUserPersonalInfo.photo = data.photo
+
+  selectIndividual.value = ""
+}
+
+
 
 const radioBtn = ref('line')
 const text = ref("Admin")
 const endUserPersonalInfo = reactive({
-  selectIndividual: "",
   entityNo: "",
   fullName: "",
   gender: "",
@@ -248,6 +291,7 @@ const endUserPersonalInfo = reactive({
   mobileNo: "",
   homeAddress: "",
   email: "",
+  photo: ""
 })
 const endUserAccountInfo = reactive({
   username: "",
@@ -265,6 +309,20 @@ const endUserAccountInfo = reactive({
 </script>
 
 <style lang="scss" >
+.custom-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  max-height: 400px;
+  width: 500px;
+  overflow-y: auto;
+
+}
+
 .individual-select {
   .q-field--outlined .q-field__control {
     border-radius: 12px;
