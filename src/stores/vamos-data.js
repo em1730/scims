@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
+import { api } from "boot/axios";
 
-export const useCounterStore = defineStore("vamosUserData", {
+export const useVamosDataStore = defineStore("vamosUserData", {
   state: () => ({
     vamosUserData: 0,
   }),
@@ -14,7 +15,7 @@ export const useCounterStore = defineStore("vamosUserData", {
   actions: {
     async findVamosUserData(keyword) {
       try {
-        let res = await api.post("api/search-user", { query: keyword });
+        let res = await api.post("api/search-data", { query: keyword });
         this.vamosUserData = res.data;
       } catch (error) {
         console.log(error);
