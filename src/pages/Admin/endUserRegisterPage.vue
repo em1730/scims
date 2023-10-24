@@ -19,7 +19,7 @@
                   <div>
                     <div class="text-caption">SELECT INDIVIDUAL</div>
                     <q-input @update:model-value="searchVamosUser" dense v-model="selectIndividual" outlined
-                      style="width:127px" debounce="1000">
+                      style="width:127px" debounce="2000">
                       <div v-if="selectIndividual" class="custom-list z-top">
                         <q-card>
                           <q-list seaprator>
