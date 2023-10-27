@@ -35,7 +35,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
-import { api } from 'boot/axios'
+
 
 const separator = ref('horizontal')
 const columns = [
@@ -89,17 +89,7 @@ const rows = [
 ]
 
 
-const endUserInfo = ref({
 
-})
-
-async function fetchEndUser() {
-  const res = await api.get('api/users')
-
-  endUserInfo.value = res.data
-
-}
-fetchEndUser()
 
 </script>
 

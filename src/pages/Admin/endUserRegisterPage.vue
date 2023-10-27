@@ -19,7 +19,7 @@
                   <div>
                     <div class="text-caption">SELECT INDIVIDUAL</div>
                     <q-input @update:model-value="searchVamosUser" dense v-model="selectIndividual" outlined
-                      style="width:127px" debounce="2000">
+                      style="width:127px" debounce="1500">
                       <div v-if="selectIndividual" class="custom-list z-top">
                         <q-card>
                           <q-list seaprator>
@@ -29,7 +29,9 @@
                             <template v-else>
                               <q-item @click="autoFillUser(user)" v-for="user in vamosUser" :key="user.id" clickable>
                                 <q-item-section avatar>
-                                  <q-icon name="person" />
+                                  <q-icon>
+                                    <img :src="`https://vamosmobile.app/sccdrrmo/flutter/images/${user.photo}`">
+                                  </q-icon>
                                 </q-item-section>
                                 <q-item-section>
                                   <q-item-label>{{ user.fullname }}</q-item-label>
@@ -89,7 +91,14 @@
                 </div>
                 <div>
                   <div class="text-caption">PASSWORD</div>
-                  <q-input v-model="endUserAccountInfo.password" outlined square filled dense flat style="width:280px" />
+                  <q-input v-model="endUserAccountInfo.password" :type="ispwd ? 'password' : 'text'" outlined square
+                    filled dense flat style="width:280px">
+                    <template v-slot:append>
+                      <q-icon :name="ispwd ? 'visibility_off' : 'visibility'" class="cursor-pointer"
+                        @click="ispwd = !ispwd" />
+                    </template>
+                  </q-input>
+
                 </div>
                 <div>
                   <div class="text-caption">JOB DESIGNATION</div>
@@ -257,7 +266,6 @@ import { date } from 'quasar'
 
 const vamosData = useVamosDataStore();
 const vamosUser = computed(() => vamosData.vamosUserData)
-console.log(vamosUser);
 
 const searchVamosUser = (keyword) => {
   vamosData.findVamosUserData(keyword)
@@ -266,13 +274,13 @@ const searchVamosUser = (keyword) => {
 
 const selectIndividual = ref('')
 const autoFillUser = (data) => {
-  console.log(data);
+
   endUserPersonalInfo.entityNo = data.entity_no
   endUserPersonalInfo.fullName = `${data.firstname} ${data.middlename} ${data.lastname}`
   endUserPersonalInfo.gender = data.gender
   endUserPersonalInfo.dateOfBirth = date.formatDate(data.birthdate, "YYYY-MM-DD")
   endUserPersonalInfo.mobileNo = data.mobile_no
-  endUserPersonalInfo.homeAddress = `${data.street} ${data.barangay} ${data.city} ${data.province} `
+  endUserPersonalInfo.homeAddress = `${data.street},Brgy. ${data.barangay}, ${data.city} ${data.province} `
   endUserPersonalInfo.email = data.email
   endUserPersonalInfo.photo = data.photo
 
@@ -293,6 +301,7 @@ const endUserPersonalInfo = reactive({
   email: "",
   photo: ""
 })
+const ispwd = ref(true)
 const endUserAccountInfo = reactive({
   username: "",
   password: "",
