@@ -45,36 +45,38 @@
                   </div>
                   <div>
                     <div class="text-caption">ENTITY NO.</div>
-                    <q-input v-model="endUserPersonalInfo.entityNo" dense outlined square filled flat
+                    <q-input v-model="endUserPersonalInfo.entityNo" dense outlined square filled flat readonly disable
                       style="width:120px" />
                   </div>
                   <div>
                     <div class="text-caption">FULL NAME</div>
-                    <q-input v-model="endUserPersonalInfo.fullName" outlined square filled dense flat style="width:300px"
-                      placeholder="(FIRST NAME, MIDDLE INITIAL, LAST NAME)" />
+                    <q-input v-model="endUserPersonalInfo.fullName" outlined square filled dense flat readonly disable
+                      style="width:300px" placeholder="(FIRST NAME, MIDDLE INITIAL, LAST NAME)" />
                   </div>
                   <div>
                     <div class="text-caption">GENDER</div>
-                    <q-input v-model="endUserPersonalInfo.gender" outlined square filled dense flat style="width:120px" />
+                    <q-input v-model="endUserPersonalInfo.gender" outlined square filled dense flat readonly disable
+                      style="width:120px" />
                   </div>
                   <div>
                     <div class="text-caption">DATE OF BIRTH</div>
                     <q-input v-model="endUserPersonalInfo.dateOfBirth" type="date" outlined square filled dense flat
-                      style="width:145px" />
+                      readonly disable style="width:145px" />
                   </div>
                   <div>
                     <div class="text-caption">MOBILE NUMBER</div>
                     <q-input v-model="endUserPersonalInfo.mobileNo" mask="###########" fill-mask="#" outlined square
-                      filled dense flat style="width:127px" />
+                      filled dense flat readonly disable style="width:127px" />
                   </div>
                   <div>
                     <div class="text-caption">HOME ADDRESS</div>
-                    <q-input v-model="endUserPersonalInfo.homeAddress" outlined square filled dense flat
+                    <q-input v-model="endUserPersonalInfo.homeAddress" outlined square filled dense flat readonly disable
                       placeholder="(STREET, BARANGAY, CITY, PROVINCE, COUNTRY)" style="width:437px" />
                   </div>
                   <div>
                     <div class="text-caption">EMAIL ADDRESS</div>
-                    <q-input v-model="endUserPersonalInfo.email" outlined square filled dense flat style="width:200px" />
+                    <q-input v-model="endUserPersonalInfo.email" outlined square filled dense flat readonly disable
+                      style="width:200px" />
                   </div>
 
                 </div>
@@ -106,15 +108,18 @@
                 </div>
                 <div>
                   <div class="text-caption">DEPARTMENT</div>
-                  <q-select v-model="endUserAccountInfo.department" outlined dense flat style="width:280px" />
+                  <q-select @update:model-value="onDepartmentSelected" v-model="departmentInput" :options="departments"
+                    option-label="department_name" emit-value outlined dense flat style="width: 280px" />
                 </div>
                 <div>
                   <div class="text-caption">DIVISION</div>
-                  <q-select v-model="endUserPersonalInfo.division" outlined dense flat style="width:280px" />
+                  <q-select @update:model-value="onDivisionSelected" v-model="divisionInput" option-value="division_name"
+                    option-label="division_name" :options="divisions" outlined dense flat style="width:280px" />
                 </div>
                 <div>
                   <div class="text-caption">SECTION</div>
-                  <q-select v-model="endUserPersonalInfo.section" outlined dense flat style="width:280px" />
+                  <q-select @update:model-value="onSectionSelected" v-model="sectionInput" option-value="section_name"
+                    option-label="section_name" :options="sections" outlined dense flat style="width:280px" />
                 </div>
               </div>
             </q-card-section>
@@ -127,7 +132,7 @@
                 <div class="row q-gutter-x-none items-start">
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 170px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="line" color="cyan" />
+                      <q-radio dense v-model="radioBtn" val="vamos-admin" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">ADMIN</div>
@@ -135,7 +140,7 @@
                   </q-field>
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 170px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="line2" color="cyan" />
+                      <q-radio dense v-model="radioBtn" val="vamos-helpdesk" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">HELPDESK</div>
@@ -143,7 +148,7 @@
                   </q-field>
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 198px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="line3" color="cyan" />
+                      <q-radio dense v-model="radioBtn" val="vamos-brangay-encoders" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">BARANGAY ENCODERS</div>
@@ -152,7 +157,7 @@
 
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 170px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="line4" color="cyan" />
+                      <q-radio dense v-model="radioBtn" val="vamos-data-encoders" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">DATA ENCODERS</div>
@@ -162,7 +167,7 @@
 
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 170px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="line5" color="cyan" />
+                      <q-radio dense v-model="radioBtn" val="vamos-viewers" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">VIEWERS</div>
@@ -175,7 +180,7 @@
                 <div class="row q-gutter-x-none items-start">
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 292px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="line2" color="cyan" />
+                      <q-radio dense v-model="radioBtn" val="resbakuna-admin" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">ADMIN</div>
@@ -183,7 +188,7 @@
                   </q-field>
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 293px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="line" color="cyan" />
+                      <q-radio dense v-model="radioBtn" val="resbakuna-helpdesk" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">HELPDESK</div>
@@ -191,7 +196,7 @@
                   </q-field>
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 292px  ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="line3" color="cyan" />
+                      <q-radio dense v-model="radioBtn" val="resbakuna-data-encoders" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">DATA ENCODERS</div>
@@ -204,7 +209,7 @@
                 <div class="row q-gutter-x-none items-start">
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 219px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="line3" color="cyan" />
+                      <q-radio dense v-model="radioBtn" val="doctrack-admin" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">ADMIN</div>
@@ -212,7 +217,7 @@
                   </q-field>
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 219px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="line2" color="cyan" />
+                      <q-radio dense v-model="radioBtn" val="doctrack-helpdesk" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">HELPDESK</div>
@@ -221,7 +226,7 @@
 
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 219px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="line" color="cyan" />
+                      <q-radio dense v-model="radioBtn" val="doctrack-data-encoders" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">DATA ENCODERS</div>
@@ -229,13 +234,12 @@
                   </q-field>
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 219px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="line4" color="cyan" />
+                      <q-radio dense v-model="radioBtn" val="doctrack-viewers" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">VIEWERS</div>
                     </template>
                   </q-field>
-
                 </div>
               </div>
             </q-card-section>
@@ -250,8 +254,6 @@
               </q-avatar>
             </q-card-section>
           </q-card>
-
-
         </q-form>
       </div>
     </q-card>
@@ -259,8 +261,9 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, onMounted, watch } from 'vue'
 import { useVamosDataStore } from '../../stores/vamos-data'
+import { api } from 'boot/axios'
 import { date } from 'quasar'
 //for customize input
 
@@ -272,9 +275,9 @@ const searchVamosUser = (keyword) => {
 
 }
 
+
 const selectIndividual = ref('')
 const autoFillUser = (data) => {
-
   endUserPersonalInfo.entityNo = data.entity_no
   endUserPersonalInfo.fullName = `${data.firstname} ${data.middlename} ${data.lastname}`
   endUserPersonalInfo.gender = data.gender
@@ -286,8 +289,6 @@ const autoFillUser = (data) => {
 
   selectIndividual.value = ""
 }
-
-
 
 const radioBtn = ref('line')
 const text = ref("Admin")
@@ -301,20 +302,77 @@ const endUserPersonalInfo = reactive({
   email: "",
   photo: ""
 })
-const ispwd = ref(true)
+
 const endUserAccountInfo = reactive({
-  username: "",
-  password: "",
-  jobDesignation: "",
   department: "",
   division: "",
-  section: "",
-})
+  password: "",
+  username: "",
+  jobDesignation: "",
+  section: ""
+});
 
-// const endUserModulesVamos = reactive({
-//   admin:"",
+// Options of different select inputs
+const departments = ref([]);
+const divisions = ref([]);
+const sections = ref([]);
 
-// })
+// Select input v-models
+const departmentInput = ref(null),
+  sectionInput = ref(null),
+  divisionInput = ref(null);
+
+const onDepartmentSelected = (val) => {
+  endUserAccountInfo.department = val.department_name
+  if (val.divisions.length) {
+    divisions.value = val.divisions
+  } else {
+    divisions.value = [{ division_name: 'N/A' }]
+    endUserAccountInfo.division = 'N/A';
+  }
+  sections.value = [{ section_name: 'N/A' }];
+  endUserAccountInfo.section = 'N/A';
+}
+
+const onDivisionSelected = (val) => {
+  if (val.division_name == 'N/A') {
+    endUserAccountInfo.division = 'N/A'
+    sections.value = [{ section_name: 'N/A' }];
+    endUserAccountInfo.section = 'N/A';
+  } else {
+    endUserAccountInfo.division = val.division_name
+    if (val.sections && val.sections.length) {
+      sections.value = val.sections;
+    } else {
+      sections.value = [{ section_name: 'N/A' }];
+      endUserAccountInfo.section = 'N/A';
+    }
+  }
+
+}
+
+const onSectionSelected = (val) => {
+  if (val.section_name == 'N/A') {
+    endUserAccountInfo.section = 'N/A';
+  } else {
+    endUserAccountInfo.section = val.section_name;
+  }
+
+}
+
+async function fetchDepartments() {
+  const res = await api.get('api/department-with-division-sec')
+
+  departments.value = res.data
+
+}
+
+fetchDepartments()
+
+
+const ispwd = ref(true)
+
+
 </script>
 
 <style lang="scss" >

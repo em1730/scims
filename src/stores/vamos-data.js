@@ -16,7 +16,7 @@ export const useVamosDataStore = defineStore("vamosUserData", {
     async findVamosUserData(keyword) {
       try {
         let res = await api.post("api/search-data", { query: keyword });
-        this.vamosUserData = res.data;
+        this.vamosUserData = res.data.data;
       } catch (error) {
         console.log(error);
       }
