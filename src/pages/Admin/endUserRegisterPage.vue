@@ -4,7 +4,7 @@
       <div>
         <q-card-section class="row q-gutter-y-md q-mx-auto justify-between">
           <q-btn to="/endUser" rounded size="13px" label="BACK" color="grey-7" style="width:120px" />
-          <q-btn rounded size="13px" label="SAVE" color="grey-7" style="width:120px" />
+          <q-btn @click="handleInsertButtonClick" rounded size="13px" label="SAVE" color="grey-7" style="width:120px" />
         </q-card-section>
       </div>
       <div class="individual-select">
@@ -132,7 +132,7 @@
                 <div class="row q-gutter-x-none items-start">
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 170px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="vamos-admin" color="cyan" />
+                      <q-radio dense v-model="vamosModule" val="vamos.admin" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">ADMIN</div>
@@ -140,7 +140,7 @@
                   </q-field>
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 170px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="vamos-helpdesk" color="cyan" />
+                      <q-radio dense v-model="vamosModule" val="vamos.helpdesk" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">HELPDESK</div>
@@ -148,7 +148,7 @@
                   </q-field>
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 198px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="vamos-brangay-encoders" color="cyan" />
+                      <q-radio dense v-model="vamosModule" val="vamos.brangay.encoders" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">BARANGAY ENCODERS</div>
@@ -157,7 +157,7 @@
 
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 170px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="vamos-data-encoders" color="cyan" />
+                      <q-radio dense v-model="vamosModule" val="vamos.data.encoders" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">DATA ENCODERS</div>
@@ -167,7 +167,7 @@
 
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 170px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="vamos-viewers" color="cyan" />
+                      <q-radio dense v-model="vamosModule" val="vamos.viewers" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">VIEWERS</div>
@@ -180,7 +180,7 @@
                 <div class="row q-gutter-x-none items-start">
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 292px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="resbakuna-admin" color="cyan" />
+                      <q-radio dense v-model="resbakunaModule" val="resbakuna.admin" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">ADMIN</div>
@@ -188,7 +188,7 @@
                   </q-field>
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 293px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="resbakuna-helpdesk" color="cyan" />
+                      <q-radio dense v-model="resbakunaModule" val="resbakuna.helpdesk" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">HELPDESK</div>
@@ -196,7 +196,7 @@
                   </q-field>
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 292px  ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="resbakuna-data-encoders" color="cyan" />
+                      <q-radio dense v-model="resbakunaModule" val="resbakuna.data.encoders" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">DATA ENCODERS</div>
@@ -209,7 +209,7 @@
                 <div class="row q-gutter-x-none items-start">
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 219px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="doctrack-admin" color="cyan" />
+                      <q-radio dense v-model="doctrackModule" val="doctrack.admin" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">ADMIN</div>
@@ -217,7 +217,7 @@
                   </q-field>
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 219px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="doctrack-helpdesk" color="cyan" />
+                      <q-radio dense v-model="doctrackModule" val="doctrack.helpdesk" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">HELPDESK</div>
@@ -226,7 +226,7 @@
 
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 219px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="doctrack-data-encoders" color="cyan" />
+                      <q-radio dense v-model="doctrackModule" val="doctrack.data.encoders" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">DATA ENCODERS</div>
@@ -234,7 +234,7 @@
                   </q-field>
                   <q-field standout dense label-color="orange" outlined stack-label style="width: 219px ;">
                     <template v-slot:prepend>
-                      <q-radio dense v-model="radioBtn" val="doctrack-viewers" color="cyan" />
+                      <q-radio dense v-model="doctrackModule" val="doctrack.viewers" color="cyan" />
                     </template>
                     <template v-slot:control>
                       <div class="self-center full-width no-outline" tabindex="0">VIEWERS</div>
@@ -264,7 +264,7 @@
 import { ref, reactive, computed, onMounted, watch } from 'vue'
 import { useVamosDataStore } from '../../stores/vamos-data'
 import { api } from 'boot/axios'
-import { date } from 'quasar'
+import { date, Notify } from 'quasar'
 //for customize input
 
 const vamosData = useVamosDataStore();
@@ -290,8 +290,10 @@ const autoFillUser = (data) => {
   selectIndividual.value = ""
 }
 
-const radioBtn = ref('line')
-const text = ref("Admin")
+const vamosModule = ref()
+const resbakunaModule = ref()
+const doctrackModule = ref()
+
 const endUserPersonalInfo = reactive({
   entityNo: "",
   fullName: "",
@@ -311,6 +313,66 @@ const endUserAccountInfo = reactive({
   jobDesignation: "",
   section: ""
 });
+
+// Function to send data to the server for database insertion
+const insertDataToDatabase = async () => {
+  const data = {
+    username: endUserAccountInfo.username, // Add the missing fields here
+    job_position: endUserAccountInfo.jobDesignation,
+    fullname: endUserPersonalInfo.fullName,
+    department: endUserAccountInfo.department,
+    division: endUserAccountInfo.division,
+    section: endUserAccountInfo.section,
+    password: endUserAccountInfo.password,
+    entity_no: endUserPersonalInfo.entityNo, // Include 'entityNo'
+    vamosModule: vamosModule.value, // Include 'vamosModule'
+    resbakunaModule: resbakunaModule.value, // Include 'resbakunaModule'
+    doctrackModule: doctrackModule.value, // Include 'doctrackModule'
+
+  };
+  console.log(data)
+
+
+
+  const response = await api.post('api/insertUserData', data);
+
+  if (response.status === 201) {
+    // Data successfully inserted
+    Notify.create({
+      type: 'positive',
+      message: "User's data successfully inserted into the database."
+    })
+    clear()
+  } else {
+    // Handle error if necessary
+    console.error('Error inserting data into the database.');
+  }
+};
+
+// Example: Call the insertDataToDatabase function on a button click
+const handleInsertButtonClick = () => {
+  insertDataToDatabase();
+
+};
+
+function clear() {
+  endUserPersonalInfo.entityNo = ''
+  endUserPersonalInfo.fullName = ''
+  endUserPersonalInfo.gender = ''
+  endUserPersonalInfo.dateOfBirth = ''
+  endUserPersonalInfo.mobileNo = ''
+  endUserPersonalInfo.homeAddress = ''
+  endUserPersonalInfo.email = ''
+  endUserPersonalInfo.photo = ''
+  endUserAccountInfo.username = ''
+  endUserAccountInfo.department = ''
+  endUserAccountInfo.division = ''
+  endUserAccountInfo.password = ''
+  endUserAccountInfo.jobDesignation = ''
+  endUserAccountInfo.section = ''
+
+
+}
 
 // Options of different select inputs
 const departments = ref([]);
