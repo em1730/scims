@@ -1,0 +1,26 @@
+// app global css in SCSS form
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Karla", sans-serif;
+}
+
+img {
+  -webkit-user-drag: none;
+  /* Safari */
+  -khtml-user-drag: none;
+  /* Konqueror HTML */
+  -moz-user-drag: none;
+  /* Firefox */
+  -o-user-drag: none;
+  /* Opera (Older) */
+  user-drag: none;
+  /* Generic */
+}
+
+//Form related css
+
+
+

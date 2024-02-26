@@ -1,0 +1,23 @@
+<template>
+  <div class="group hover:scale-110 duration-300">
+    <q-btn
+      flat
+      unelevated
+      dense
+      color="white"
+      :ripple="{ color: 'white' }"
+      to="/masterList"
+    >
+      <img
+        class="w-36 md:w-32 lg:w-32 sm:w-16"
+        src="../../assets/icons/masterlist/Masterlist.webp"
+      />
+    </q-btn>
+    <p class="text-xs group-hover:text-blue-800 lg:hidden">Masterlist</p>
+    <p
+      class="text-xs group-hover:text-blue-800 lg:block sm:hidden portrait:hidden"
+    >
+      Master Listing
+    </p>
+  </div>
+</template>
