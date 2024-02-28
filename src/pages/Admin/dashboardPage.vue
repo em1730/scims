@@ -35,6 +35,7 @@
           enter-active-class="animated animate__zoomIn"
           leave-active-class="animated animate__zoomOut"
         >
+          <VamosBtn key="vamos-button" />
           <DoctrackBtn key="doctrack-button" />
           <CertClearanceBtn key="CertClearance-button" />
           <SPBtn key="sp-button" />
@@ -65,5 +66,6 @@ import SeniorBtn from "components/button/SeniorBtn.vue";
 import GsdBtn from "components/button/GsdBtn.vue";
 import LetBtn from "components/button/LetBtn.vue";
 import ETurismoBtn from "components/button/ETurismoBtn.vue";
+import VamosBtn from "components/button/VamosBtn.vue";
 import HrisBtn from "components/button/HrisBtn.vue";
 </script>
