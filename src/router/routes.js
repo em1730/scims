@@ -4,6 +4,44 @@ const routes = [
     component: () => import("layouts/MainLayout.vue"),
     children: [
       {
+        path: "/whoweare",
+        component: () => import("pages/Landing/WhoWeAre.vue"),
+      },
+      // {
+      //     path: "/vamos",
+      //     component: () =>
+      //         import ("pages/Landing/vamosPage.vue"),
+      // },
+    ],
+  },
+
+  {
+    path: "/login",
+    component: () => import("layouts/LoginLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("pages/LoginPage.vue"),
+      },
+    ],
+  },
+
+  {
+    path: "/changepwd",
+    component: () => import("layouts/ChangePwdLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("pages/Admin/changepwdPage.vue"),
+      },
+    ],
+  },
+
+  {
+    path: "/dashboard",
+    component: () => import("layouts/DashboardLayout.vue"),
+    children: [
+      {
         path: "",
         component: () => import("pages/Admin/dashboardPage.vue"),
       },
@@ -103,27 +141,17 @@ const routes = [
         path: "/transportation",
         component: () => import("pages/Vamos/transportationPage.vue"),
       },
-    ],
-  },
-
-  {
-    path: "/",
-    component: () => import("layouts/LoginLayout.vue"),
-    children: [
       {
-        path: "/login",
-        component: () => import("pages/LoginPage.vue"),
+        path: "/about",
+        component: () => import("pages/Vamos/aboutPage.vue"),
       },
-    ],
-  },
-
-  {
-    path: "/",
-    component: () => import("layouts/ChangePwdLayout.vue"),
-    children: [
       {
-        path: "/changePwd",
-        component: () => import("pages/Admin/changepwdPage.vue"),
+        path: "/report_trace",
+        component: () => import("pages/Vamos/tracehistoryPage.vue"),
+      },
+      {
+        path: "/report_vamosid",
+        component: () => import("pages/Vamos/vamosidPage.vue"),
       },
     ],
   },
@@ -132,7 +160,7 @@ const routes = [
   // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-    component: () => import("pages / ErrorNotFound.vue "),
+    component: () => import("pages/ErrorNotFound.vue "),
   },
 ];
 
