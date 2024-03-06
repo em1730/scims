@@ -37,29 +37,30 @@
           class="text-red-600 peer-focus:font-medium text-xs italic"
           >Note: This will be your password from now on.</label
         >
-
-        <button
-          name="submitPassword"
-          id="submitPassword"
-          data-te-ripple-init
-          data-te-ripple-color="light"
-          class="duration-300 items-center justify-center flex bg-gray-800 px-2 py-2 mt-6 mb-0 font-bold text-center text-white uppercase align-middle transition-all border-0 rounded-lg cursor-pointer shadow-soft-md bg-x-25 bg-150 leading-pro text-xs ease-soft-in tracking-tight-soft hover:scale-105 hover:shadow-soft-xs active:opacity-85"
-        >
-          <svg
-            aria-hidden="true"
-            class="w-5 h-5 mr-2 fill-current"
-            fill="none"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+        <router-link to="/dashboard">
+          <button
+            name="submitPassword"
+            id="submitPassword"
+            data-te-ripple-init
+            data-te-ripple-color="light"
+            class="duration-300 items-center justify-center flex bg-gray-800 px-2 py-2 mt-6 mb-0 font-bold text-center text-white uppercase align-middle transition-all border-0 rounded-lg cursor-pointer shadow-soft-md bg-x-25 bg-150 leading-pro text-xs ease-soft-in tracking-tight-soft hover:scale-105 hover:shadow-soft-xs active:opacity-85"
           >
-            <path
-              fill-rule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          Change Password
-        </button>
+            <svg
+              aria-hidden="true"
+              class="w-5 h-5 mr-2 fill-current"
+              fill="none"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Change Password
+          </button>
+        </router-link>
       </div>
     </q-page>
   </transition>
